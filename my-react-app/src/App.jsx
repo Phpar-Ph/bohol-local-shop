@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Product from "./components/Product";
+import Login from "./components/Login";
 
 function App() {
+  const [showLogin, setShowlogin] = useState(false);
   return (
     <div>
-      <Navbar />
+      {showLogin ? <Login isClose={setShowlogin} /> : <></>}
+      <Navbar setShowlogin={setShowlogin} />
+      <Home />
+      <Product />
     </div>
   );
 }
