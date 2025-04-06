@@ -11,6 +11,7 @@ function App() {
       {showLogin ? <Login isClose={setShowlogin} /> : <></>}
       <Navbar setShowlogin={setShowlogin} />
       <Home />
+
       <Product />
     </div>
   );

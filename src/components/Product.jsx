@@ -1,6 +1,7 @@
 import React from "react";
 import product1 from "../assets/product/peanutkisses.jpg";
 import { CiStar } from "react-icons/ci";
+import Contruct from "./Contruct";
 
 function Product() {
   return (
@@ -32,17 +33,9 @@ function Product() {
               </div>
             </div>
           </div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
-          <div className="w-70 h-90 bg-amber-300"></div>
         </div>
       </div>
+      <Contruct />
     </div>
   );
 }

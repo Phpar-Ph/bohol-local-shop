@@ -1,4 +1,6 @@
 import React from "react";
+import { IoSearchOutline } from "react-icons/io5";
+import { BsBag } from "react-icons/bs";
 
 function Navbar({ setShowlogin }) {
   return (
@@ -16,9 +18,13 @@ function Navbar({ setShowlogin }) {
           </ul>
         </div>
         <div>
-          <ul className="flex gap-8">
-            <li>search</li>
-            <li>cart</li>
+          <ul className="flex gap-8 items-center">
+            <li className="">
+              <IoSearchOutline />
+            </li>
+            <li>
+              <BsBag />
+            </li>
             <li onClick={() => setShowlogin(true)} className="cursor-pointer">
               login
             </li>

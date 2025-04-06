@@ -1,12 +1,11 @@
 import React from "react";
-import hero from "../assets/bg-hero.jpg";
 
 function Home() {
   return (
     <div>
       <div
         style={{
-          backgroundImage: `url(${hero})`,
+          backgroundImage: `url("https://7uomswwzdn.ufs.sh/f/jqqibgGpBsTYDKy59wGX35NXvbKCh4gjdiyG6TUPeZl2aERp")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           width: "100vw",
