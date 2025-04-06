@@ -6,7 +6,7 @@ const Contruct = () => {
     <div className="font-extrabold text-amber-50 text-6xl absolute  w-full h-40 bg-black/50 z-10 flex items-center justify-center">
       <h1 className="flex gap-4 items-center">
         <LuConstruction className="text-amber-400" />
-        IN PROGRESS
+        UNDER CONSTRUCTION
         <LuConstruction className="text-amber-400" />
       </h1>
     </div>

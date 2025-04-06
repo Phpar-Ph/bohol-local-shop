@@ -15,6 +15,7 @@ function Product() {
         </ul>
       </div>
       {/* PRODUCTS */}
+      <Contruct />
       <div className="flex justify-center">
         <div className="grid grid-cols-6 gap-8">
           <div className="w-70 h-90 bg-amber-300">
@@ -35,7 +36,6 @@ function Product() {
           </div>
         </div>
       </div>
-      <Contruct />
     </div>
   );
 }
