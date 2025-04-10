@@ -1,9 +1,9 @@
 import React from "react";
 import { LuConstruction } from "react-icons/lu";
 
-const Contruct = () => {
+const Construct = () => {
   return (
-    <div className="font-extrabold text-amber-50 text-6xl absolute  w-full h-40 bg-black/50 z-10 flex items-center justify-center">
+    <div className="font-extrabold text-amber-50 text-6xl absolute  w-full h-40 bg-black/50 flex items-center justify-center">
       <h1 className="flex gap-4 items-center">
         <LuConstruction className="text-amber-400" />
         UNDER CONSTRUCTION
@@ -13,4 +13,4 @@ const Contruct = () => {
   );
 };
 
-export default Contruct;
+export default Construct;

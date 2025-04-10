@@ -1,4 +1,5 @@
 import React from "react";
+import Product from "../components/Product";
 
 function Home() {
   return (
@@ -11,10 +12,13 @@ function Home() {
           width: "100vw",
           height: "50vh",
         }}
-        className="flex justify-center items-center text-white text-8xl font-extrabold"
+        className="flex justify-center items-center"
       >
-        <h1>Shop Local, Experience Bohol</h1>
+        <h1 className="font-primary font-black text-primary text-8xl drop-shadow-xl">
+          Shop Local, Experience Bohol
+        </h1>
       </div>
+      <Product />
     </div>
   );
 }
