@@ -7,6 +7,7 @@ import Shop from "./pages/Shop";
 import Product from "./components/Product";
 import { Routes, Route } from "react-router";
 import Login from "./components/Login";
+import Cart from "./pages/Cart";
 
 function App() {
   const [showLogin, setShowlogin] = useState(false);
@@ -19,6 +20,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       {/* <Product /> */}
     </div>

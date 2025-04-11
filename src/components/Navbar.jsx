@@ -10,7 +10,9 @@ function Navbar({ setShowlogin }) {
     <div className="h-20 w-full bg-background flex justify-center items-center shadow-md">
       <div className=" text-2xl text-primary font-secondary font-bold flex justify-between items-center w-4/5 h-full">
         <div>
-          <p>LOGO</p>
+          <NavLink to="/">
+            <p>LOGO</p>
+          </NavLink>
         </div>
         <div>
           <ul className="flex gap-10 items-center">
@@ -26,7 +28,9 @@ function Navbar({ setShowlogin }) {
               <IoSearchOutline className="text-3xl font-bold" />
             </li>
             <li>
-              <BsBag className="text-3xl font-bold" />
+              <NavLink to="/cart">
+                <BsBag className="text-3xl font-bold" />
+              </NavLink>
             </li>
             {/* onClick={() => setShowlogin(true)} */}
             <li className="cursor-pointer " onClick={() => setShowlogin(true)}>
