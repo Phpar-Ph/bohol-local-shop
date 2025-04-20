@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router";
-import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { IoBagHandle } from "react-icons/io5";
@@ -18,30 +17,28 @@ const NavBar = () => {
               <NavLink to="/">HOME</NavLink>
             </li>
             <li>
-              <NavLink path="/shop">SHOP</NavLink>
+              <NavLink to="/shop">SHOP</NavLink>
             </li>
             <li>
-              <NavLink path="/about">ABOUT</NavLink>
+              <NavLink to="/about">ABOUT</NavLink>
             </li>
             <li>
-              <NavLink path="/contact">CONTACT</NavLink>
+              <NavLink to="/contact">CONTACT</NavLink>
             </li>
           </ul>
         </div>
         <div className="flex  justify-end items-center space-x-4 flex-1 ">
           <div className="relative flex items-center">
-            <CiSearch className="text-2xl absolute right-0 m-2" />
+            <CiSearch className="text-2xl absolute right-0 m-2 text-gray-400 " />
             <input
               type="text"
-              className="bg-gray-200 p-1 rounded-xl pl-2"
-              placeholder="search..."
+              className="bg-gray-200 p-1 pl-4 pr-8 rounded-xl  focus:outline-none"
+              placeholder="Search..."
             />
           </div>
           <div className="p-1 relative">
             <div className="absolute top-0 right-0 h-2 w-2 bg-Cta rounded-full m-1"></div>
             <IoBagHandle className="text-3xl text-textPrimary" />
-
-            {/* <FaShoppingCart className="text-3xl text-textPrimary" /> */}
           </div>
           <div className="">
             <MdAccountCircle className="text-3xl text-textPrimary" />

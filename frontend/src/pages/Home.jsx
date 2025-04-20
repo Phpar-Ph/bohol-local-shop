@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "/public/bg-shop-local1.jpg";
+import bgImage from "../assets/bg-shop-local.jpg";
 import NavBarProduct from "../products/NavBarProduct";
 import Products from "../products/Products";
 import UnderConstruction from "../components/UnderConstruction";
