@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crimsonPink: #e94560;
+  --color-textPrimary: #f9f9f9;
+  --color-Cta: #14b53a;
+}
