@@ -5,3 +5,9 @@
   --color-textPrimary: #f9f9f9;
   --color-Cta: #14b53a;
 }
+
+@layer components {
+  .page-container {
+    @apply h-screen w-full flex justify-center items-center text-6xl font-bold text-amber-950;
+  }
+}

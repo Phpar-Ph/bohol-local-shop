@@ -1,11 +1,11 @@
 import React from "react";
 
-function About() {
+const Cart = () => {
   return (
     <div className="page-container">
-      <h1>THIS IS ABOUT PAGE</h1>
+      <h1>THIS IS CART PAGE</h1>
     </div>
   );
-}
+};
 
-export default About;
+export default Cart;

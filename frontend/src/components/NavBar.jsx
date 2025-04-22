@@ -36,10 +36,12 @@ const NavBar = () => {
               placeholder="Search..."
             />
           </div>
-          <div className="p-1 relative">
-            <div className="absolute top-0 right-0 h-2 w-2 bg-Cta rounded-full m-1"></div>
-            <IoBagHandle className="text-3xl text-textPrimary" />
-          </div>
+          <NavLink to="/cart">
+            <div className="p-1 relative">
+              <div className="absolute top-0 right-0 h-2 w-2 bg-Cta rounded-full m-1"></div>
+              <IoBagHandle className="text-3xl text-textPrimary" />
+            </div>
+          </NavLink>
           <div className="">
             <MdAccountCircle className="text-3xl text-textPrimary" />
           </div>
