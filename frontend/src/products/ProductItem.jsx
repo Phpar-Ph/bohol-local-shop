@@ -6,41 +6,53 @@ function ProductItem({ id, name, description, price, image, category }) {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   return (
-    <div className="rounded-2xl w-96 h-[32rem] drop-shadow-2xl border-2">
-      <div className=" h-3/4">
-        <img src={image} alt={name} className="h-full w-full rounded-2xl" />
-        <div className="absolute top-2 right-2 p-4 bg-Cta rounded-full ">
+    <div className="relative rounded-2xl w-96 h-[32rem] border border-gray-200 shadow-xl overflow-hidden transition-transform hover:scale-[1.02] bg-white">
+      {/* Image */}
+      <div className="h-3/4 relative">
+        <img
+          src={image}
+          alt={name}
+          className="h-full w-full object-cover rounded-t-2xl"
+        />
+
+        {/* Add to Cart Button / Quantity Controls */}
+        <div className="absolute top-3 right-3 bg-crimsonPink text-white p-2 rounded-full shadow-md">
           {!cartItems[id] ? (
             <FaPlus
-              className="text-2xl cursor-pointer "
+              className="text-xl cursor-pointer hover:scale-110 transition-transform"
               onClick={() => addToCart(id)}
             />
           ) : (
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center gap-2 text-white">
               <FaMinus
                 onClick={() => removeFromCart(id)}
-                className="text-2xl cursor-pointer "
+                className="text-xl cursor-pointer hover:scale-110 transition-transform"
               />
-              <p className="text-2xl">{cartItems[id]}</p>
+              <p className="font-semibold text-xl">{cartItems[id]}</p>
               <FaPlus
                 onClick={() => addToCart(id)}
-                className="text-2xl cursor-pointer"
+                className="text-xl cursor-pointer hover:scale-110 transition-transform"
               />
             </div>
           )}
         </div>
       </div>
-      <div className=" flex flex-col justify-between  h-1/4  p-4">
-        <div className="flex justify-between">
+
+      {/* Content */}
+      <div className="h-1/4 px-5 py-4 flex flex-col justify-between">
+        {/* Title + Price */}
+        <div className="flex justify-between items-start">
           <div>
-            <h1 className="text-xl font-bold">{name}</h1>
-            <p className="text-sm p-2">{description}</p>
+            <h1 className="text-xl font-semibold text-gray-800">{name}</h1>
+            <p className="text-sm text-gray-500 mt-1">{description}</p>
           </div>
-          <p className="font-bold text-lg">${price}</p>
+          <span className="text-lg font-bold text-crimsonPink">${price}</span>
         </div>
-        <div className="flex flex-col">
-          <p>Category: {category}</p>
-        </div>
+
+        {/* Category */}
+        <p className="text-sm text-gray-600 mt-4">
+          <span className="font-medium">Category:</span> {category}
+        </p>
       </div>
     </div>
   );

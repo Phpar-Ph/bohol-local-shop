@@ -9,16 +9,21 @@ const ProductNavBar = ({ productCategory, setProductCategory }) => {
     <div>
       <div className=" flex  justify-center mt-10">
         <ul className="flex space-x-8 font-bold text-amber-950 text-2xl">
-          <li onClick={() => setProductCategory("all")}>All Products</li>
+          <li
+            onClick={() => setProductCategory("all")}
+            className="hover:cursor-pointer"
+          >
+            All Products
+          </li>
           <select
             value={productCategory}
             onChange={handleCategoryChange}
-            className="text-center"
+            className="text-center hover:cursor-pointer"
           >
             <option value="">Category</option>
             <option value="food">Food</option>
             <option value="beverages">Beverages</option>
-            <option value="fashion">Fashion</option>
+            <option value="fashion">Fashion</option>S
             <option value="home decor">Home Decor</option>
             <option value="handicrafts">Handicrafts</option>
             <option value="personal care">Personal Care</option>
