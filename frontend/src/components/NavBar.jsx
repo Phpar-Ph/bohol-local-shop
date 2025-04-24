@@ -3,11 +3,15 @@ import { NavLink, useNavigate } from "react-router";
 import { MdAccountCircle } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { IoBagHandle } from "react-icons/io5";
+import { useContext } from "react";
+import { StoreContext } from "../context/StoreContext";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
+  const { isCartEmpty } = useContext(StoreContext);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
@@ -80,37 +84,49 @@ const NavBar = () => {
           <NavLink to="/cart">
             <div className="relative">
               <IoBagHandle className="text-3xl text-white hover:text-gray-100 transition" />
-              <div className="absolute -top-1 -right-1 h-2.5 w-2.5 bg-Cta rounded-full animate-ping"></div>
-              <div className="absolute -top-1 -right-1 h-2.5 w-2.5 bg-Cta rounded-full"></div>
+              {!isCartEmpty && (
+                <>
+                  <div className="absolute -top-1 -right-1 h-2.5 w-2.5 bg-Cta rounded-full animate-ping"></div>
+                  <div className="absolute -top-1 -right-1 h-2.5 w-2.5 bg-Cta rounded-full"></div>
+                </>
+              )}
             </div>
           </NavLink>
 
           {/* Account Dropdown */}
-          <div
-            className="relative cursor-pointer group"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <MdAccountCircle className="text-4xl text-white hover:text-gray-100 transition" />
-            {isOpen && (
-              <div className="absolute top-12 right-0 w-48 bg-white shadow-lg rounded-xl border border-gray-200 p-4 z-50 transition-all duration-300">
-                <ul className="space-y-2">
-                  <li
-                    className="px-4 py-2 rounded-md hover:bg-crimsonPink hover:text-white transition"
-                    onClick={() => navigate("/signin")}
-                  >
-                    Sign In
-                  </li>
-                  <li className="px-4 py-2 rounded-md hover:bg-crimsonPink hover:text-white transition">
-                    Logout
-                  </li>
-                  <li className="px-4 py-2 rounded-md hover:bg-crimsonPink hover:text-white transition">
-                    Profile
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
+          {isSignedIn ? (
+            <div
+              className="relative cursor-pointer group"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <MdAccountCircle className="text-4xl text-white hover:text-gray-100 transition" />
+              {isOpen && (
+                <div className="absolute top-12 right-0 w-48 bg-white shadow-lg rounded-xl border border-gray-200 p-4 z-50 transition-all duration-300">
+                  <ul className="space-y-2">
+                    <li
+                      className="px-4 py-2 rounded-md hover:bg-crimsonPink hover:text-white transition"
+                      onClick={() => navigate("/profile")}
+                    >
+                      Profile
+                    </li>
+                    <li className="px-4 py-2 rounded-md hover:bg-crimsonPink hover:text-white transition">
+                      Be a Seller
+                    </li>
+                    <li className="px-4 py-2 rounded-md hover:bg-crimsonPink hover:text-white transition">
+                      Logout
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div onClick={() => navigate("/signin")}>
+              <p className="text-xl text-white hover:text-gray-100 transition cursor-pointer font-bold">
+                Sign In
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

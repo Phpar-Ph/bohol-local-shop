@@ -23,6 +23,9 @@ const StoreContextProvider = (props) => {
       [itemId]: prevItems[itemId] - 1,
     }));
   };
+  const isCartEmpty =
+    Object.values(cartItems).reduce((sum, qty) => sum + qty, 0) === 0;
+
   useEffect(() => {
     console.log(cartItems);
   }, [cartItems]);
@@ -32,6 +35,7 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     setCartItems,
+    isCartEmpty,
   };
   return (
     <StoreContext.Provider value={contextValue}>

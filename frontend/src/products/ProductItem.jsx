@@ -16,19 +16,21 @@ function ProductItem({ id, name, description, price, image, category }) {
         />
 
         {/* Add to Cart Button / Quantity Controls */}
-        <div className="absolute top-3 right-3 bg-crimsonPink text-white p-2 rounded-full shadow-md">
+        <div className="absolute top-3 right-3 bg-crimsonPink text-white p-2 rounded-full shadow-md ">
           {!cartItems[id] ? (
             <FaPlus
               className="text-xl cursor-pointer hover:scale-110 transition-transform"
               onClick={() => addToCart(id)}
             />
           ) : (
-            <div className="flex items-center gap-2 text-white">
+            <div className="flex items-center justify-center gap-2 text-white">
               <FaMinus
                 onClick={() => removeFromCart(id)}
                 className="text-xl cursor-pointer hover:scale-110 transition-transform"
               />
-              <p className="font-semibold text-xl">{cartItems[id]}</p>
+              <div className=" pl-2 pr-2 ">
+                <p className="font-semibold text-xl">{cartItems[id]}</p>
+              </div>
               <FaPlus
                 onClick={() => addToCart(id)}
                 className="text-xl cursor-pointer hover:scale-110 transition-transform"
