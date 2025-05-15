@@ -5,7 +5,10 @@ import { createContext, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState({});
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("cartItems");
+    return savedCart ? JSON.parse(savedCart) : {};
+  });
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -27,7 +30,7 @@ const StoreContextProvider = (props) => {
     Object.values(cartItems).reduce((sum, qty) => sum + qty, 0) === 0;
 
   useEffect(() => {
-    console.log(cartItems);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const contextValue = {

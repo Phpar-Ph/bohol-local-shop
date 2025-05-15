@@ -4,7 +4,8 @@ import { ProductList } from "../products/ProductList";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 
 const Cart = () => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, isCartEmpty } =
+    useContext(StoreContext);
 
   // Safely update total when cartItems changes
   // useEffect(() => {}, [cartItems]);
@@ -13,8 +14,7 @@ const Cart = () => {
     const quantity = cartItems[item.id] || 0;
     return acc + item.price * quantity;
   }, 0);
-  const isCartEmpty =
-    Object.values(cartItems).reduce((sum, qty) => sum + qty, 0) === 0;
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">

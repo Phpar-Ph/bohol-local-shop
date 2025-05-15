@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="w-full h-fit">
       <Header />
-      {/* <UnderConstruction /> */}
+      <UnderConstruction />
       <Products />
     </div>
   );
